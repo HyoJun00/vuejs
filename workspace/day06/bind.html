@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind 디렉티브</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <input type="text" placeholder="값입력"> -->
+        <input type="text" v-bind:placeholder="msg">
+        <hr>
+        <button v-on:click="">click</button>
+    </div>
+    <script>
+        var app = Vue.createApp({
+            name: "App",
+            data() {
+                return {
+                    msg: "값을 입력하세요",
+                };
+            },
+            methods: {
+                print() {
+                    alert("안녕하세요");
+                },
+            },
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>

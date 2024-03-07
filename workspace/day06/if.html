@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>v-if 디렉티브</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            양수입력 : <input type="text" v-model="number" />
+            <img
+                v-if="number <= 0"
+                src="./img/error.png"
+                style="width: 15px; height: 15px; vertical-align: middle"
+            />
+        </div>
+        <script>
+            const vm = Vue.createApp({
+                data() {
+                    return { number: "" };
+                },
+            }).mount("#app");
+        </script>
+    </body>
+</html>
